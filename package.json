@@ -1,0 +1,20 @@
+{
+  "name": "backend-brain-games",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ozmeks/backend-brain-games.git"
+  },
+  "author": "ozmeks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ozmeks/backend-brain-games/issues"
+  },
+  "type": "module",
+  "homepage": "https://github.com/Ozmeks/backend-brain-games#readme"
+}
