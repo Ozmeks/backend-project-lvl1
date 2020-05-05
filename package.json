@@ -19,5 +19,8 @@
     "url": "https://github.com/Ozmeks/backend-brain-games/issues"
   },
   "type": "module",
-  "homepage": "https://github.com/Ozmeks/backend-brain-games#readme"
+  "homepage": "https://github.com/Ozmeks/backend-brain-games#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
