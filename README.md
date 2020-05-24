@@ -4,8 +4,8 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/dfc50c2d88cd46d069c1/maintainability)](https://codeclimate.com/github/Ozmeks/backend-brain-games/maintainability)
 
-Example of brain-even game (victory):
-[![asciicast](https://asciinema.org/a/330954.svg)](https://asciinema.org/a/330954)
+Example of brain-even game:
+[![asciicast](https://asciinema.org/a/333433.svg)](https://asciinema.org/a/333433)
 
-Example of brain-even game (defeat):
-[![asciicast](https://asciinema.org/a/330957.svg)](https://asciinema.org/a/330957)
+Example of brain-calc game:
+[![asciicast](https://asciinema.org/a/333431.svg)](https://asciinema.org/a/333431)
