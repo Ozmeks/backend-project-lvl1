@@ -7,7 +7,5 @@ export const greetUser = () => {
   return name;
 };
 
-export const askUser = () => readlineSync.question('Your answer: ');
-export const winGame = (name) => `Congratulations, ${name}!`;
-export const loseGame = (name) => `Let's try again, ${name}!`;
-export const rightAnswer = () => console.log('Correct!');
+export const getQuestion = (task) => console.log(`Question: ${task}`);
+export const getAnswer = () => readlineSync.question('Your answer: ');
