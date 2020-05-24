@@ -24,5 +24,10 @@ export default () => {
   }
   msg.getQuestion(operation);
 
-  return (res.toString() === msg.getAnswer());
+  const answer = msg.getAnswer();
+  if (res.toString() === answer) {
+    return true;
+  }
+  msg.getError(answer, res);
+  return false;
 };
