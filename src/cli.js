@@ -9,4 +9,4 @@ export const greetUser = () => {
 
 export const getQuestion = (task) => console.log(`Question: ${task}`);
 export const getAnswer = () => readlineSync.question('Your answer: ');
-export const getError = (answer, res) => console.log(`"${answer}" is wrong answer ;(. Correct answer was "${res}".`); 
+export const getError = (answer, res) => console.log(`"${answer}" is wrong answer ;(. Correct answer was "${res}".`);
