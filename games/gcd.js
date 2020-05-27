@@ -1,8 +1,8 @@
 import * as msg from '../src/cli.js';
 
-const gcd = (a, b) => {
+const getGcd = (a, b) => {
   if (b) {
-    return gcd(b, a % b);
+    return getGcd(b, a % b);
   }
   return Math.abs(a);
 };
@@ -13,7 +13,7 @@ export default () => {
   msg.getQuestion(`${num1} ${num2}`);
 
   const answer = msg.getAnswer();
-  const res = gcd(num1, num2);
+  const res = getGcd(num1, num2);
   if (answer === res.toString()) {
     return true;
   }
