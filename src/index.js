@@ -1,8 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export const generateNum = (size) => Math.ceil(Math.random() * size);
-
-export const launchGame = (textRules, playGame) => {
+export default (textRules, playGame) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);

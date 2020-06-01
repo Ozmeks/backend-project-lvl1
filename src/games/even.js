@@ -1,4 +1,5 @@
-import { launchGame, generateNum } from '../index.js';
+import launchGame from '../index.js';
+import generateNum from '../generate.js';
 
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
