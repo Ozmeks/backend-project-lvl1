@@ -16,12 +16,12 @@ export default (description, generateQuestion) => {
     if (answer !== userAnswer) {
       console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}".`);
       console.log(`Let's try again, ${name}!`);
-      return 0;
+      return false;
     }
     console.log('Correct!');
     successCnt += 1;
   }
 
   console.log(`Congratulations, ${name}!`);
-  return 1;
+  return true;
 };

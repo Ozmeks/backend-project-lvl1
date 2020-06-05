@@ -13,10 +13,9 @@ const generateQuestion = () => {
   let i = 1;
   while (i < progressionLength) {
     if (emptyIndex === i) {
-      str += ' ..';
+      str = `${str} ..`;
     } else {
-      const nextNum = first + i * diff;
-      str += ` ${nextNum}`;
+      str = `${str} ${first + i * diff}`;
     }
     i += 1;
   }
