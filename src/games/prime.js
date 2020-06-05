@@ -14,16 +14,13 @@ const isPrime = (num) => {
   return true;
 };
 
-const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const playPrime = () => {
-  const num = generateNum(100);
-  const res = isPrime(num) ? 'yes' : 'no';
-
-  return {
-    task: num.toString(),
-    result: res,
-  };
+const generateQuestion = () => {
+  const num = generateNum(1, 100);
+  const answer = isPrime(num) ? 'yes' : 'no';
+  const question = num.toString();
+  return [question, answer];
 };
 
-export default () => launchGame(rules, playPrime);
+export default () => launchGame(description, generateQuestion);

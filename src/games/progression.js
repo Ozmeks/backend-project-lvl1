@@ -1,12 +1,12 @@
 import launchGame from '../index.js';
 import generateNum from '../generate.js';
 
-const rules = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
-const playProgression = () => {
-  const first = generateNum(10);
-  const diff = generateNum(10);
-  const emptyIndex = generateNum(10) - 1;
+const generateQuestion = () => {
+  const first = generateNum(1, 10);
+  const diff = generateNum(1, 10);
+  const emptyIndex = generateNum(0, 9);
   const progressionLength = 10;
 
   let str = (emptyIndex === 0) ? '..' : first;
@@ -15,16 +15,14 @@ const playProgression = () => {
     if (emptyIndex === i) {
       str += ' ..';
     } else {
-      str += ` ${first + i * diff}`;
+      const nextNum = first + i * diff;
+      str += ` ${nextNum}`;
     }
     i += 1;
   }
-  const res = first + emptyIndex * diff;
-
-  return {
-    task: str,
-    result: res.toString(),
-  };
+  const answer = first + emptyIndex * diff;
+  const question = str;
+  return [question, answer.toString()];
 };
 
-export default () => launchGame(rules, playProgression);
+export default () => launchGame(description, generateQuestion);

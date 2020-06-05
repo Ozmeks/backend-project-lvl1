@@ -1,17 +1,13 @@
 import launchGame from '../index.js';
 import generateNum from '../generate.js';
 
-const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const playEven = () => {
-  const num = generateNum(100);
-
-  const res = (num % 2 === 0) ? 'yes' : 'no';
-
-  return {
-    task: num.toString(),
-    result: res,
-  };
+const generateQuestion = () => {
+  const num = generateNum(1, 100);
+  const answer = (num % 2 === 0) ? 'yes' : 'no';
+  const question = num.toString();
+  return [question, answer];
 };
 
-export default () => launchGame(rules, playEven);
+export default () => launchGame(description, generateQuestion);

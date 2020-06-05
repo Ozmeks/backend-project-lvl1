@@ -1,24 +1,27 @@
 import readlineSync from 'readline-sync';
 
-export default (textRules, playGame) => {
+export default (description, generateQuestion) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  console.log(textRules);
+  console.log(description);
 
+  const maxSuccessCnt = 3;
   let successCnt = 0;
-  while (successCnt < 3) {
-    const { task, result } = playGame();
-    console.log(`Question: ${task}`);
-    const answer = readlineSync.question('Your answer: ');
+  while (successCnt < maxSuccessCnt) {
+    const [question, answer] = generateQuestion();
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
 
-    if (result !== answer) {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${result}".`);
-      return console.log(`Let's try again, ${name}!`);
+    if (answer !== userAnswer) {
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}".`);
+      console.log(`Let's try again, ${name}!`);
+      return 0;
     }
     console.log('Correct!');
     successCnt += 1;
   }
 
-  return console.log(`Congratulations, ${name}!`);
+  console.log(`Congratulations, ${name}!`);
+  return 1;
 };

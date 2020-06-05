@@ -8,15 +8,14 @@ const getGcd = (a, b) => {
   return Math.abs(a);
 };
 
-const rules = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
-const playGcd = () => {
-  const num1 = generateNum(100);
-  const num2 = generateNum(100);
-  return {
-    task: `${num1} ${num2}`,
-    result: getGcd(num1, num2).toString(),
-  };
+const generateQuestion = () => {
+  const num1 = generateNum(1, 100);
+  const num2 = generateNum(1, 100);
+  const answer = getGcd(num1, num2).toString();
+  const question = `${num1} ${num2}`;
+  return [question, answer];
 };
 
-export default () => launchGame(rules, playGcd);
+export default () => launchGame(description, generateQuestion);
