@@ -3,25 +3,20 @@ import generateNum from '../generate.js';
 
 const description = 'What number is missing in the progression?';
 
-const generateQuestion = () => {
+const generateGameData = () => {
   const first = generateNum(1, 10);
   const diff = generateNum(1, 10);
-  const emptyIndex = generateNum(0, 9);
   const progressionLength = 10;
+  const emptyIndex = generateNum(0, progressionLength - 1);
 
-  let str = (emptyIndex === 0) ? '..' : first;
-  let i = 1;
-  while (i < progressionLength) {
-    if (emptyIndex === i) {
-      str = `${str} ..`;
-    } else {
-      str = `${str} ${first + i * diff}`;
-    }
-    i += 1;
+  let question = '';
+  for (let i = 0; i < progressionLength; i += 1) {
+    const newItem = (i === emptyIndex) ? '..' : first + i * diff;
+    question = (i === 0) ? `${newItem}` : `${question} ${newItem}`;
   }
+
   const answer = first + emptyIndex * diff;
-  const question = str;
   return [question, answer.toString()];
 };
 
-export default () => launchGame(description, generateQuestion);
+export default () => launchGame(description, generateGameData);
