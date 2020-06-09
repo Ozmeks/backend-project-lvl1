@@ -3,7 +3,7 @@ import generateNum from '../generate.js';
 
 const description = 'What is the result of the expression?';
 
-const generateQuestion = () => {
+const generateGameData = () => {
   const operations = ['+', '-', '*'];
   const operNum = generateNum(0, operations.length - 1);
   const randomOper = operations[operNum];
@@ -29,4 +29,4 @@ const generateQuestion = () => {
   return [question, answer.toString()];
 };
 
-export default () => launchGame(description, generateQuestion);
+export default () => launchGame(description, generateGameData);

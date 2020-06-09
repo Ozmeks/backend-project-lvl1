@@ -16,11 +16,11 @@ const isPrime = (num) => {
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const generateQuestion = () => {
+const generateGameData = () => {
   const num = generateNum(1, 100);
   const answer = isPrime(num) ? 'yes' : 'no';
   const question = num.toString();
   return [question, answer];
 };
 
-export default () => launchGame(description, generateQuestion);
+export default () => launchGame(description, generateGameData);

@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export default (description, generateQuestion) => {
+export default (description, generateGameData) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
@@ -9,7 +9,7 @@ export default (description, generateQuestion) => {
   const maxSuccessCnt = 3;
   let successCnt = 0;
   while (successCnt < maxSuccessCnt) {
-    const [question, answer] = generateQuestion();
+    const [question, answer] = generateGameData();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
