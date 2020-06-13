@@ -9,12 +9,13 @@ const generateGameData = () => {
   const progressionLength = 10;
   const emptyIndex = generateNum(0, progressionLength - 1);
 
-  let question = '';
+  const progressionItems = [];
   for (let i = 0; i < progressionLength; i += 1) {
     const newItem = (i === emptyIndex) ? '..' : first + i * diff;
-    question = (i === 0) ? `${newItem}` : `${question} ${newItem}`;
+    progressionItems.push(newItem);
   }
 
+  const question = progressionItems.join(' ');
   const answer = first + emptyIndex * diff;
   return [question, answer.toString()];
 };
